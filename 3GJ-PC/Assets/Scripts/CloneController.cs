@@ -4,14 +4,23 @@ public class CloneController : MonoBehaviour
 {
     [SerializeField] private float moveSpeed = 5f;
     [SerializeField] private float jumpForce = 5f;
+    [SerializeField] private Transform groundCheck;
+    [SerializeField] private float groundCheckRadius = 0.2f;
+    [SerializeField] private LayerMask groundLayer;
 
     private Rigidbody2D cloneRigidbody2D;
     [HideInInspector] public Vector2 cloneMoveDirection;
     private bool hasJumped;
+    private bool isGrounded;
 
     private void Start()
     {
         cloneRigidbody2D = GetComponent<Rigidbody2D>();
+    }
+
+    private void Update()
+    {
+        isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
     }
 
     private void FixedUpdate()
@@ -20,8 +29,8 @@ public class CloneController : MonoBehaviour
 
         if (hasJumped)
         {
-            cloneRigidbody2D.linearVelocity = new Vector2(cloneRigidbody2D.linearVelocity.x, jumpForce);
             hasJumped = false;
+            cloneRigidbody2D.linearVelocity = new Vector2(cloneRigidbody2D.linearVelocity.x, jumpForce);
         }
     }
 
@@ -34,6 +43,9 @@ public class CloneController : MonoBehaviour
 
     public void Jump()
     {
-        hasJumped = true;
+        if (isGrounded)
+        {
+            hasJumped = true;
+        }
     }
 }
