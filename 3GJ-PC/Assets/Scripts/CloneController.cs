@@ -9,8 +9,6 @@ public class CloneController : MonoBehaviour
     [HideInInspector] public Vector2 cloneMoveDirection;
     private bool hasJumped;
 
-    private CharacterController characterController;
-
     private void Start()
     {
         cloneRigidbody2D = GetComponent<Rigidbody2D>();
@@ -18,11 +16,11 @@ public class CloneController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        cloneRigidbody2D.linearVelocityX = -characterController.moveDirection.x * moveSpeed;
+        cloneRigidbody2D.linearVelocity = new Vector2(cloneMoveDirection.x * moveSpeed, cloneRigidbody2D.linearVelocity.y);
 
         if (hasJumped)
         {
-            cloneRigidbody2D.linearVelocityY = jumpForce;
+            cloneRigidbody2D.linearVelocity = new Vector2(cloneRigidbody2D.linearVelocity.x, jumpForce);
             hasJumped = false;
         }
     }
@@ -30,7 +28,7 @@ public class CloneController : MonoBehaviour
 
     public void CloneMove(Vector2 currentPlayerMoveDirection)
     {
-        cloneMoveDirection = -currentPlayerMoveDirection;
+        cloneMoveDirection = new Vector2(-currentPlayerMoveDirection.x, currentPlayerMoveDirection.y);
     }
 
 

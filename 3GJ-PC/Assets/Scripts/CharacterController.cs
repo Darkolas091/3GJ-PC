@@ -6,9 +6,8 @@ public class CharacterController : MonoBehaviour
     [SerializeField] private float jumpForce = 5f;
 
     private Rigidbody2D playerRigidbody2D;
-     public Vector2 moveDirection;
+    public Vector2 moveDirection;
     private bool hasJumped;
-    //[HideInInspector]
 
     private void Start()
     {
@@ -17,11 +16,11 @@ public class CharacterController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        playerRigidbody2D.linearVelocityX = moveDirection.x * moveSpeed;
+        playerRigidbody2D.linearVelocity = new Vector2(moveDirection.x * moveSpeed, playerRigidbody2D.linearVelocity.y);
 
-        if(hasJumped )
+        if (hasJumped)
         {
-            playerRigidbody2D.linearVelocityY = jumpForce;
+            playerRigidbody2D.linearVelocity = new Vector2(playerRigidbody2D.linearVelocity.x, jumpForce);
             hasJumped = false;
         }
     }
@@ -29,9 +28,7 @@ public class CharacterController : MonoBehaviour
     public void PlayerMove(Vector2 currentPlayerMoveDirection)
     {
         moveDirection = currentPlayerMoveDirection;
-
     }
-    
 
     public void Jump()
     {
