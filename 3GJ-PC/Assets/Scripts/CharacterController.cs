@@ -10,6 +10,9 @@ public class CharacterController : MonoBehaviour
 
     private Rigidbody2D playerRigidbody2D;
     public Vector2 moveDirection;
+    public float coyoteTime = 0.2f;
+    //private float coyoteTimeCounter;
+    //public float CoyoteTimeCounter => coyoteTimeCounter;
     private bool hasJumped;
     private bool isGrounded;
 
@@ -43,7 +46,12 @@ public class CharacterController : MonoBehaviour
     {
         if (isGrounded)
         {
+            //coyoteTimeCounter = coyoteTime;
             hasJumped = true;
         }
+        //else
+        //{
+        //    coyoteTimeCounter -= Time.deltaTime;
+        //}
     }
 }

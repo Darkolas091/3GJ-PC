@@ -21,6 +21,10 @@ public class PlayerInputHandler : MonoBehaviour
 
     private void Jump(InputAction.CallbackContext context)
     {
+        //if (characterController.CoyoteTimeCounter > 0)
+        //{
+
+        //}
         characterController.Jump();
         cloneController.Jump();
     }
