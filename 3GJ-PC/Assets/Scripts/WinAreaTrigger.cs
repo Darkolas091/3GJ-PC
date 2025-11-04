@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class WinAreaTrigger : MonoBehaviour
 {
-    public bool isPlayerWinArea;
+    [SerializeField] private bool isPlayerWinArea;
     private LevelManager levelManager;
 
     void Start()
@@ -12,11 +12,11 @@ public class WinAreaTrigger : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (isPlayerWinArea && other.CompareTag("Player"))
+        if (isPlayerWinArea && other.TryGetComponent<CharacterController>(out CharacterController player))
         {
             levelManager.PlayerEnteredWinArea();
         }
-        else if (!isPlayerWinArea && other.CompareTag("Clone"))
+        else if (!isPlayerWinArea && other.TryGetComponent<CloneController>(out CloneController clone))
         {
             levelManager.CloneEnteredWinArea();
         }
