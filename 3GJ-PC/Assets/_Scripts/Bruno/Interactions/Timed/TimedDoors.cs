@@ -1,9 +1,12 @@
 using System.Collections;
 using UnityEngine;
 
-public class Door : MonoBehaviour, IActivatable
+public class TimedDoors : MonoBehaviour,IActivatable
 {
-    [SerializeField] private float openSpeed = 20f; // how fast it shrinks
+
+    [SerializeField] private float openSpeed = 3f;
+    [SerializeField] private float stayOpenTime = 6f;
+    private Coroutine autoCloseRoutine;
     private Vector3 closedScale;
     private Vector3 openScale;
     private Coroutine moveRoutine;
@@ -18,17 +21,24 @@ public class Door : MonoBehaviour, IActivatable
 
     public void Activate()
     {
-        if (isOpen) return;
-        isOpen = true;
-        StartShrink(openScale);
-        
+        if (!isOpen)
+        {
+            isOpen = true;
+            StartShrink(openScale);
+        }
+
+        if (autoCloseRoutine != null)
+        {
+            StopCoroutine(autoCloseRoutine);
+        }
+
+        autoCloseRoutine = StartCoroutine(AutoClose());
     }
 
     public void Deactivate()
     {
-        if (!isOpen) return;
-        isOpen = false;
         StartShrink(closedScale);
+        isOpen = false;
     }
 
     private void StartShrink(Vector3 targetScale)
@@ -46,5 +56,13 @@ public class Door : MonoBehaviour, IActivatable
             yield return null;
         }
         transform.localScale = targetScale;
+    }
+
+
+
+    private IEnumerator AutoClose()
+    {
+        yield return new WaitForSeconds(stayOpenTime);
+        Deactivate(); 
     }
 }

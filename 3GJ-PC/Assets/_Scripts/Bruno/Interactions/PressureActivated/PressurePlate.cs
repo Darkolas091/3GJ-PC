@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class PressurePlate : MonoBehaviour,ITrigger
+public class PressurePlate : MonoBehaviour, ITrigger
 {
     private PlayerInputHandler PlayerInputHandler;
 
@@ -19,7 +19,7 @@ public class PressurePlate : MonoBehaviour,ITrigger
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.GetComponent<PlayerInputHandler>())
+        if (other.GetComponent<PlayerInputHandler>() || other.GetComponent<MovableObjects>())
         {
             objectsOnPlate++;
             if (objectsOnPlate == 1)
@@ -29,7 +29,7 @@ public class PressurePlate : MonoBehaviour,ITrigger
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.GetComponent<PlayerInputHandler>())
+        if (other.GetComponent<PlayerInputHandler>() || other.GetComponent<MovableObjects>())
         {
             objectsOnPlate--;
             if (objectsOnPlate <= 0)
