@@ -592,6 +592,8 @@ MonoBehaviour:
   introPanelLevelText: {fileID: 1017563369}
   levelIntroPanel: {fileID: 1038878486}
   winPanel: {fileID: 1223803081}
+  playerInWinArea: 0
+  cloneInWinArea: 0
 --- !u!4 &705162719
 Transform:
   m_ObjectHideFlags: 0
@@ -862,10 +864,10 @@ BoxCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
+    border: {x: 0.049999997, y: 0.049999997, z: 0.049999997, w: 0.049999997}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
+    oldSize: {x: 0.16, y: 0.16}
+    newSize: {x: 0.16, y: 0.16}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -900,6 +902,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WinAreaTrigger
   isPlayerWinArea: 0
+  levelManager: {fileID: 0}
 --- !u!1 &1017563367
 GameObject:
   m_ObjectHideFlags: 0
@@ -1166,10 +1169,10 @@ BoxCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
+    border: {x: 0.049999997, y: 0.049999997, z: 0.049999997, w: 0.049999997}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
+    oldSize: {x: 0.16, y: 0.16}
+    newSize: {x: 0.16, y: 0.16}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -1204,6 +1207,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WinAreaTrigger
   isPlayerWinArea: 1
+  levelManager: {fileID: 0}
 --- !u!1 &1105375913
 GameObject:
   m_ObjectHideFlags: 0
