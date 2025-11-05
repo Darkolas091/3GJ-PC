@@ -62,8 +62,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2.55, y: 0, z: 0}
-  m_LocalScale: {x: 0.29, y: 0.29, z: 0.29}
-  m_ConstrainProportionsScale: 1
+  m_LocalScale: {x: 0.5, y: 1, z: 0.5}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8676413626859639615}
   m_Father: {fileID: 0}
@@ -142,7 +142,7 @@ Rigidbody2D:
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 7d7e68b81a5402f42b655dd1ff41ac5f, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -211,27 +211,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee2ec5632f8360c4cbf83e711e0a6f82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerInputHandler
-  moveAction:
-    m_Name: Move
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: a94fc609-2ee4-4c43-9c37-1c43daa2ca30
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings: []
-    m_Flags: 0
-  jumpAction:
-    m_Name: Jump
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: 5ce36715-2704-4a74-9ca1-fe3e8dfa8266
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings: []
-    m_Flags: 0
   characterController: {fileID: 3423529507606838687, guid: a104e73c648f10c4c89b2681ef14b74c, type: 3}
   cloneController: {fileID: 2492135564110396957}
-  playerMoveDirection: {x: 0, y: 0}
 --- !u!114 &2492135564110396957
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -255,3 +236,4 @@ MonoBehaviour:
   cloneMoveDirection: {x: -0, y: 0}
   hasJumped: 0
   isGrounded: 0
+  animator: {fileID: 0}
