@@ -8,13 +8,13 @@ public class CharacterController : MonoBehaviour
     [SerializeField] private float groundCheckRadius = 0.2f;
     [SerializeField] private LayerMask groundLayer;
 
-    private Rigidbody2D playerRigidbody2D;
+    [SerializeField] private Rigidbody2D playerRigidbody2D;
     public Vector2 moveDirection;
-    public float coyoteTime = 0.2f;
-    //private float coyoteTimeCounter;
-    //public float CoyoteTimeCounter => coyoteTimeCounter;
-    private bool hasJumped;
-    private bool isGrounded;
+    [SerializeField] private float coyoteTime = 0.2f;
+    //[SerializeField] private float coyoteTimeCounter;
+    //[SerializeField] private float CoyoteTimeCounter => coyoteTimeCounter;
+    [SerializeField] private bool hasJumped;
+    [SerializeField] private bool isGrounded;
 
     private void Start()
     {

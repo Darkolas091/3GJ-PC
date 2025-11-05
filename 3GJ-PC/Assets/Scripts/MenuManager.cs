@@ -6,10 +6,10 @@ using UnityEngine.UI;
 
 public class MenuManager : MonoBehaviour
 {
-    public GameObject optionsPanel;
-    public Slider volumeSlider;
-    public TMP_Text volumeText;
-    public GameObject howToPlayPanel;
+    [SerializeField] private GameObject optionsPanel;
+    [SerializeField] private Slider volumeSlider;
+    [SerializeField] private TMP_Text volumeText;
+    [SerializeField] private GameObject howToPlayPanel;
 
     private void Start()
     {

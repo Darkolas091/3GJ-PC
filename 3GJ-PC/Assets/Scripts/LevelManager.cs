@@ -1,18 +1,40 @@
 using System.Collections;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class LevelManager : MonoBehaviour
 {
-    public GameObject levelIntroPanel;
-    public GameObject winPanel;
-    private bool playerInWinArea = false;
-    private bool cloneInWinArea = false;
+    [SerializeField] private TMP_Text introPanelLevelText;
+    [SerializeField] private GameObject levelIntroPanel;
+    [SerializeField] private GameObject winPanel;
+    [SerializeField] private bool playerInWinArea = false;
+    [SerializeField] private bool cloneInWinArea = false;
+
+
+    void Start()
+    {
+        StartCoroutine(ShowLevelIntro());
+    }
+
+    IEnumerator ShowLevelIntro()
+    {
+        levelIntroPanel.SetActive(true);
+        introPanelLevelText.text = $"Level {SceneManager.GetActiveScene().buildIndex.ToString()}";   // this needs to be adjusted when all scenes in scene manager are finally set
+        yield return new WaitForSeconds(3f);
+        levelIntroPanel.SetActive(false);
+    }
+
 
     public void LoadNextLevel()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
+    public void RestartLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     public void PlayerEnteredWinArea()
@@ -35,15 +57,4 @@ public class LevelManager : MonoBehaviour
         }
     }
 
-    void Start()
-    {
-        StartCoroutine(ShowLevelIntro());
-    }
-
-    IEnumerator ShowLevelIntro()
-    {
-        levelIntroPanel.SetActive(true);
-        yield return new WaitForSeconds(3f);
-        levelIntroPanel.SetActive(false);
-    }
 }
