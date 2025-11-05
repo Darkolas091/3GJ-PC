@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: MagdalenaTheWitchAnimationController
+  m_Controller: {fileID: 9100000, guid: 11e5bfd8bc34b69489c2a49ffdb4cba5, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 6519797580735707675, guid: a09d05a6c6d44b14eab22ef86618c61e, type: 3}
+    m_OverrideClip: {fileID: 8064955349404888162, guid: 32966e883bce34e438658c62caf022a9, type: 3}
+  - m_OriginalClip: {fileID: -3984336675183921142, guid: a09d05a6c6d44b14eab22ef86618c61e, type: 3}
+    m_OverrideClip: {fileID: -4388100324325131106, guid: 32966e883bce34e438658c62caf022a9, type: 3}
+  - m_OriginalClip: {fileID: -3568569460044860775, guid: a09d05a6c6d44b14eab22ef86618c61e, type: 3}
+    m_OverrideClip: {fileID: 5732087572813329129, guid: 32966e883bce34e438658c62caf022a9, type: 3}
