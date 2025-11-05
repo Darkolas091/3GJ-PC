@@ -4,16 +4,18 @@ using UnityEngine.InputSystem;
 
 public class PlayerInputHandler : MonoBehaviour
 {
-    [SerializeField] private InputAction moveAction;
-    [SerializeField] private InputAction jumpAction;
+     private InputAction moveAction;
+     private InputAction jumpAction;
 
     [SerializeField] private CharacterController characterController;
     [SerializeField] private CloneController cloneController;
 
-    [SerializeField] private Vector2 playerMoveDirection;
+    private Vector2 playerMoveDirection;
+    private Animator animator;
 
     private void Awake()
     {
+        animator = GetComponent<Animator>();
         moveAction = InputSystem.actions.FindAction("Move");
         jumpAction = InputSystem.actions.FindAction("Jump");
         jumpAction.performed += Jump;
@@ -25,6 +27,7 @@ public class PlayerInputHandler : MonoBehaviour
         //{
 
         //}
+        animator.SetTrigger("isJumping");
         characterController.Jump();
         cloneController.Jump();
     }
