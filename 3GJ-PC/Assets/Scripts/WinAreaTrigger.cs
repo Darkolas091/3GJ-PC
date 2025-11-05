@@ -3,7 +3,7 @@ using UnityEngine;
 public class WinAreaTrigger : MonoBehaviour
 {
     [SerializeField] private bool isPlayerWinArea;
-    private LevelManager levelManager;
+    [SerializeField] private LevelManager levelManager;
 
     void Start()
     {

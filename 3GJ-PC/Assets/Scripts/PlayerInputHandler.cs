@@ -4,13 +4,13 @@ using UnityEngine.InputSystem;
 
 public class PlayerInputHandler : MonoBehaviour
 {
-    private InputAction moveAction;
-    private InputAction jumpAction;
+    [SerializeField] private InputAction moveAction;
+    [SerializeField] private InputAction jumpAction;
 
     [SerializeField] private CharacterController characterController;
     [SerializeField] private CloneController cloneController;
 
-    private Vector2 playerMoveDirection;
+    [SerializeField] private Vector2 playerMoveDirection;
 
     private void Awake()
     {

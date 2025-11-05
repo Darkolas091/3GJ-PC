@@ -9,8 +9,8 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private TMP_Text introPanelLevelText;
     [SerializeField] private GameObject levelIntroPanel;
     [SerializeField] private GameObject winPanel;
-    private bool playerInWinArea = false;
-    private bool cloneInWinArea = false;
+    [SerializeField] private bool playerInWinArea = false;
+    [SerializeField] private bool cloneInWinArea = false;
 
 
     void Start()

@@ -8,10 +8,10 @@ public class CloneController : MonoBehaviour
     [SerializeField] private float groundCheckRadius = 0.2f;
     [SerializeField] private LayerMask groundLayer;
 
-    private Rigidbody2D cloneRigidbody2D;
-    [HideInInspector] public Vector2 cloneMoveDirection;
-    private bool hasJumped;
-    private bool isGrounded;
+    [SerializeField] private Rigidbody2D cloneRigidbody2D;
+    public Vector2 cloneMoveDirection;
+    [SerializeField] private bool hasJumped;
+    [SerializeField] private bool isGrounded;
 
     private void Start()
     {
