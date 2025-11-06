@@ -3819,6 +3819,7 @@ MonoBehaviour:
   introPanelLevelText: {fileID: 1733274332}
   levelIntroPanel: {fileID: 1106322599}
   winPanel: {fileID: 17804949}
+  deathScreenPanel: {fileID: 0}
   pauseMenuPanel: {fileID: 0}
   playerInWinArea: 0
   cloneInWinArea: 0

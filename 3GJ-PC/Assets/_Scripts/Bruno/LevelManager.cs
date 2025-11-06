@@ -13,6 +13,7 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private GameObject pauseMenuPanel;
     [SerializeField] private bool playerInWinArea = false;
     [SerializeField] private bool cloneInWinArea = false;
+    [SerializeField] private int levelIntroPanelNumberAdjustment = 4;
 
 
     void Start()
@@ -24,7 +25,7 @@ public class LevelManager : MonoBehaviour
     IEnumerator ShowLevelIntro()
     {
         levelIntroPanel.SetActive(true);
-        introPanelLevelText.text = $"Level {SceneManager.GetActiveScene().buildIndex.ToString()}";   // this needs to be adjusted when all scenes in scene manager are finally set
+        introPanelLevelText.text = $"Level {SceneManager.GetActiveScene().buildIndex - levelIntroPanelNumberAdjustment}";   // this needs to be adjusted when all scenes in scene manager are finally set
         yield return new WaitForSeconds(3f);
         levelIntroPanel.SetActive(false);
     }
