@@ -31,8 +31,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 4.58, y: -2.36, z: 0}
-  m_LocalScale: {x: -1.5, y: 1.5, z: 0}
-  m_ConstrainProportionsScale: 1
+  m_LocalScale: {x: 1.5, y: 1.5, z: 0}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1026164054087395425}
   - {fileID: 59687412364284504}
@@ -78,7 +78,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   playerRigidbody2D: {fileID: 4103391452391379370}
-  moveDirection: {x: 0, y: 0}
+  moveDirection: {x: -1, y: 0}
   coyoteTime: 0.2
   hasJumped: 0
   isGrounded: 0
