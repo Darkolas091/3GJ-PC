@@ -9,6 +9,7 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private TMP_Text introPanelLevelText;
     [SerializeField] private GameObject levelIntroPanel;
     [SerializeField] private GameObject winPanel;
+    [SerializeField] private GameObject deathScreenPanel;
     [SerializeField] private GameObject pauseMenuPanel;
     [SerializeField] private bool playerInWinArea = false;
     [SerializeField] private bool cloneInWinArea = false;
@@ -30,18 +31,20 @@ public class LevelManager : MonoBehaviour
 
     public void PauseGame()
     {
-        if (Input.GetKey(KeyCode.A))
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
             pauseMenuPanel.SetActive(true);
+            Debug.Log("game paused");
         }
 
     }
 
     public void ResumeGame()
     {
-        if (Input.GetKey(KeyCode.A))
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
             pauseMenuPanel.SetActive(false);
+            Debug.Log("game unpaused");
         }
     }
 
@@ -53,6 +56,11 @@ public class LevelManager : MonoBehaviour
     public void RestartLevel()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void BackToMenu()
+    {
+        SceneManager.LoadScene(0);
     }
 
     public void PlayerEnteredWinArea()
