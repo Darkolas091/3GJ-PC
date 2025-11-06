@@ -9,6 +9,7 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private TMP_Text introPanelLevelText;
     [SerializeField] private GameObject levelIntroPanel;
     [SerializeField] private GameObject winPanel;
+    [SerializeField] private GameObject pauseMenuPanel;
     [SerializeField] private bool playerInWinArea = false;
     [SerializeField] private bool cloneInWinArea = false;
 
@@ -16,6 +17,7 @@ public class LevelManager : MonoBehaviour
     void Start()
     {
         StartCoroutine(ShowLevelIntro());
+        pauseMenuPanel.SetActive(false);
     }
 
     IEnumerator ShowLevelIntro()
@@ -26,6 +28,22 @@ public class LevelManager : MonoBehaviour
         levelIntroPanel.SetActive(false);
     }
 
+    public void PauseGame()
+    {
+        if (Input.GetKey(KeyCode.A))
+        {
+            pauseMenuPanel.SetActive(true);
+        }
+
+    }
+
+    public void ResumeGame()
+    {
+        if (Input.GetKey(KeyCode.A))
+        {
+            pauseMenuPanel.SetActive(false);
+        }
+    }
 
     public void LoadNextLevel()
     {

@@ -23,6 +23,7 @@ public class CloneController : MonoBehaviour
     private void Update()
     {
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
+
     }
 
     private void FixedUpdate()
@@ -51,11 +52,11 @@ public class CloneController : MonoBehaviour
         }
         if (currentPlayerMoveDirection.x > 0)
         {
-            transform.localScale = new Vector2(5, 5);
+            transform.localScale = new Vector2(1f, 1f);
         }
         else
         {
-            transform.localScale = new Vector2(-5, 5);
+            transform.localScale = new Vector2(-1, 1f);
         }
         cloneMoveDirection = new Vector2(-currentPlayerMoveDirection.x, currentPlayerMoveDirection.y);
     }

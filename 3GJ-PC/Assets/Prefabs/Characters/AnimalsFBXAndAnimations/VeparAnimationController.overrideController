@@ -1,0 +1,15 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: VeparAnimationController
+  m_Controller: {fileID: 9100000, guid: c84bd27ec105b5145be5981f632e2ff3, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: -7125938366350984322, guid: d03a744b27c667c45beec84d85f3b30e, type: 3}
+    m_OverrideClip: {fileID: -8097006136493527523, guid: b416a52ab4879044a9fd4c65a8ecd53a, type: 3}
+  - m_OriginalClip: {fileID: -5557515303995644947, guid: d03a744b27c667c45beec84d85f3b30e, type: 3}
+    m_OverrideClip: {fileID: 4103644493617314776, guid: b416a52ab4879044a9fd4c65a8ecd53a, type: 3}

@@ -54,11 +54,11 @@ public class CharacterController : MonoBehaviour
 
         if (currentPlayerMoveDirection.x > 0)
         {
-            transform.localScale = new Vector2(-5, 5);
+            transform.localScale = new Vector2(-1, 1);
         }
-        else if(currentPlayerMoveDirection.x < 0)
+        else if (currentPlayerMoveDirection.x < 0)
         {
-            transform.localScale = new Vector2(5,5);
+            transform.localScale = new Vector2(1, 1);
         }
         moveDirection = currentPlayerMoveDirection;
     }
