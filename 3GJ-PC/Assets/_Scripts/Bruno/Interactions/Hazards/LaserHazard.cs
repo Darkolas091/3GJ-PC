@@ -16,6 +16,8 @@ public class LaserHazard : MonoBehaviour
     private BoxCollider2D boxCollider;
     private LineRenderer lineRenderer;
 
+    [SerializeField] private bool isVertical = false;
+
     private void Awake()
     {
         
@@ -41,8 +43,21 @@ public class LaserHazard : MonoBehaviour
 
     private void UpdateLinePositions()
     {
-        Vector3 start = transform.position - new Vector3(laserLength / 2, 0, 0);
-        Vector3 end = transform.position + new Vector3(laserLength / 2, 0, 0);
+        Vector3 start;
+        Vector3 end;
+        if (isVertical)
+        {
+            start = transform.position - new Vector3(0, laserLength / 2, 0);
+        end = transform.position + new Vector3(0, laserLength / 2, 0);
+            boxCollider.size = new Vector2(laserThickness,laserLength);
+        }
+        else
+        {
+            start = transform.position - new Vector3(laserLength / 2, 0, 0);
+            end = transform.position + new Vector3(laserLength / 2, 0, 0);
+            boxCollider.size = new Vector2(laserLength, laserThickness);
+        }
+
         lineRenderer.SetPosition(0, start);
         lineRenderer.SetPosition(1, end);
     }

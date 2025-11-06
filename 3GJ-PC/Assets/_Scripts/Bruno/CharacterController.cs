@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.VFX;
 
 public class CharacterController : MonoBehaviour
 {
@@ -16,6 +17,8 @@ public class CharacterController : MonoBehaviour
     [SerializeField] private bool hasJumped;
     [SerializeField] private bool isGrounded;
     [SerializeField] private Animator animator;
+    [SerializeField] private GameObject vfxPushRight;
+    [SerializeField] private GameObject vfxPushLeft;
 
     private void Start()
     {
@@ -44,23 +47,38 @@ public class CharacterController : MonoBehaviour
         if (currentPlayerMoveDirection.magnitude > 0)
         {
             animator.SetBool("isMoving", true);
+            vfxPushRight.SetActive(true);
+            vfxPushLeft.SetActive(true);
         }
         else
         {
-
             animator.SetBool("isMoving", false);
+            vfxPushRight.SetActive(false);
+            vfxPushLeft.SetActive(false);
 
         }
 
         if (currentPlayerMoveDirection.x > 0)
         {
-            transform.localScale = new Vector2(-5, 5);
+            transform.localScale = new Vector2(-1.5f, 1.5f);
+            
+            vfxPushRight.SetActive(false);
+            vfxPushLeft.SetActive(true);
+            //vfxPushRight.gameObject.transform.rotation = Quaternion.Euler(0, 0, 180);
         }
-        else if(currentPlayerMoveDirection.x < 0)
+        else if (currentPlayerMoveDirection.x < 0)
         {
-            transform.localScale = new Vector2(5,5);
+            transform.localScale = new Vector2(1.5f, 1.5f);
+            vfxPushLeft.SetActive(false);
+            vfxPushRight.SetActive(true);
+
         }
         moveDirection = currentPlayerMoveDirection;
+    }
+
+    public void StartVFX()
+    {
+
     }
 
     public void Jump()

@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1513537573707854829
+--- !u!1 &1387678751352190509
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,8 +8,8 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1419339640074273898}
-  - component: {fileID: 7641582547481760544}
+  - component: {fileID: 541731333620142722}
+  - component: {fileID: 1968678010754711137}
   m_Layer: 0
   m_Name: TimedWallUpToDown
   m_TagString: Untagged
@@ -17,36 +17,37 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1419339640074273898
+--- !u!4 &541731333620142722
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1513537573707854829}
+  m_GameObject: {fileID: 1387678751352190509}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10.23, y: 1.63, z: 0}
+  m_LocalPosition: {x: -5.81, y: 0.16, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 8761388707835729949}
+  - {fileID: 5881786658161863342}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7641582547481760544
+--- !u!114 &1968678010754711137
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1513537573707854829}
+  m_GameObject: {fileID: 1387678751352190509}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 54564b54e18f2ca40a98a056b9163042, type: 3}
+  m_Script: {fileID: 11500000, guid: f2c740da4d6e36d409bce5f11fd7662c, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::TimedPressurePlate
-  targets: []
---- !u!1 &1676365212581921425
+  m_EditorClassIdentifier: Assembly-CSharp::TimedDoors
+  openSpeed: 3
+  stayOpenTime: 6
+--- !u!1 &5179699802099274618
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -54,10 +55,9 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 8761388707835729949}
-  - component: {fileID: 3407299067381606144}
-  - component: {fileID: 3941386972826423914}
-  - component: {fileID: 2542132549454294938}
+  - component: {fileID: 5881786658161863342}
+  - component: {fileID: 4367194687977333380}
+  - component: {fileID: 8809406286883689067}
   m_Layer: 0
   m_Name: PressuredDoors
   m_TagString: Untagged
@@ -65,28 +65,28 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &8761388707835729949
+--- !u!4 &5881786658161863342
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1676365212581921425}
+  m_GameObject: {fileID: 5179699802099274618}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.70710576, w: 0.70710784}
-  m_LocalPosition: {x: -0.105199814, y: 2.2914, z: 0}
-  m_LocalScale: {x: 4.6036286, y: 1, z: 1}
+  m_LocalPosition: {x: 0.20169973, y: 0.99518, z: 0}
+  m_LocalScale: {x: 1.8284667, y: 0.9862292, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1419339640074273898}
+  m_Father: {fileID: 541731333620142722}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
---- !u!212 &3407299067381606144
+--- !u!212 &4367194687977333380
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1676365212581921425}
+  m_GameObject: {fileID: 5179699802099274618}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -126,9 +126,9 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -34
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 0, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -138,13 +138,13 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &3941386972826423914
+--- !u!61 &8809406286883689067
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1676365212581921425}
+  m_GameObject: {fileID: 5179699802099274618}
   m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
@@ -184,16 +184,3 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &2542132549454294938
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1676365212581921425}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 638a7b9e56be0d24392bbf26b728ff58, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Door
-  openSpeed: 2
