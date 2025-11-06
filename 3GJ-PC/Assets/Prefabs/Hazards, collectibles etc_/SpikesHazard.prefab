@@ -183,6 +183,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e934721547cb25a459f450c8a6ea50d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpikeHazard
+  levelManager: {fileID: 8842232544960134688, guid: c77061ff767434f48bc7a40ee851ec32, type: 3}
 --- !u!1 &9076057896115697000
 GameObject:
   m_ObjectHideFlags: 0
