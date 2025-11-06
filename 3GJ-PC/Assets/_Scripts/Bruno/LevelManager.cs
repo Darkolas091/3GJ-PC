@@ -28,21 +28,26 @@ public class LevelManager : MonoBehaviour
         levelIntroPanel.SetActive(false);
     }
 
+    private void Update()
+    {
+        PauseGame();
+    }
+
     public void PauseGame()
     {
-        if (Input.GetKey(KeyCode.A))
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
             pauseMenuPanel.SetActive(true);
+            Time.timeScale = 0;
         }
 
     }
 
     public void ResumeGame()
     {
-        if (Input.GetKey(KeyCode.A))
-        {
-            pauseMenuPanel.SetActive(false);
-        }
+        Time.timeScale = 1;
+        pauseMenuPanel.SetActive(false);
+
     }
 
     public void LoadNextLevel()
@@ -53,6 +58,7 @@ public class LevelManager : MonoBehaviour
     public void RestartLevel()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        Time.timeScale = 1;
     }
 
     public void PlayerEnteredWinArea()
