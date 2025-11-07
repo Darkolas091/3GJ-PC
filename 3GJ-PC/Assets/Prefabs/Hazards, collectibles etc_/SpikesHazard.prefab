@@ -184,6 +184,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpikeHazard
   levelManager: {fileID: 8842232544960134688, guid: c77061ff767434f48bc7a40ee851ec32, type: 3}
+  deathScreenPanel: {fileID: 852743726402619530, guid: 05aaea7dc97e1a3439449f2e23c78b90, type: 3}
 --- !u!1 &9076057896115697000
 GameObject:
   m_ObjectHideFlags: 0

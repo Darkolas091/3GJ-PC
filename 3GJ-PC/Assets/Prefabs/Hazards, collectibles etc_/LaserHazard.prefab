@@ -50,6 +50,9 @@ MonoBehaviour:
   laserThickness: 0.3
   fireInterval: 5
   laserDuration: 5
+  particlePrefabStart: {fileID: 2098368509277828865, guid: bee072489ea47b94a853d257f2d17159, type: 3}
+  particlePrefabEnd: {fileID: 8635447611112648522, guid: 890c1d0aaaa429742b9ef40059ea0f50, type: 3}
+  isVertical: 0
 --- !u!61 &6408819063685213122
 BoxCollider2D:
   m_ObjectHideFlags: 0

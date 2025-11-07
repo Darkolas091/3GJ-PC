@@ -4,11 +4,11 @@ using UnityEngine.UI;
 public class KeyItem : MonoBehaviour
 {
     [SerializeField] private LockedDoor linkedDoor;
-    [SerializeField] private Image keyImage;
+    //[SerializeField] private Image keyImage;
 
     private void Awake()
     {
-        keyImage.gameObject.SetActive(false);
+        //keyImage.gameObject.SetActive(false);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -19,7 +19,7 @@ public class KeyItem : MonoBehaviour
                 linkedDoor.UnlockDoor(); 
             
             Destroy(gameObject);
-            keyImage.gameObject.SetActive(true);
+            //keyImage.gameObject.SetActive(true);
         }
     }
 }
