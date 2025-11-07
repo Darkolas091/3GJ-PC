@@ -24,7 +24,7 @@ public class MenuManager : MonoBehaviour
 
     public void PlayGame()
     {
-        SceneManager.LoadScene("Level1"); // Change "Level1" to your level scene name
+        SceneManager.LoadScene("Cinematic1"); // Change "Level1" to your level scene name
     }
 
     public void OpenOptionsPanel()

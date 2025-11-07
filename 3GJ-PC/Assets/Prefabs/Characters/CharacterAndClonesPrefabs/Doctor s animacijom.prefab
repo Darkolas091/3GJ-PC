@@ -433,11 +433,9 @@ MonoBehaviour:
     m_Bits: 64
   playerRigidbody2D: {fileID: 5717836403075651604}
   moveDirection: {x: 0, y: 0}
-  coyoteTime: 0.2
   hasJumped: 0
   isGrounded: 0
   animator: {fileID: 8861215345535707599}
-  soundKey: animalWalking
 --- !u!95 &8861215345535707599
 Animator:
   serializedVersion: 7

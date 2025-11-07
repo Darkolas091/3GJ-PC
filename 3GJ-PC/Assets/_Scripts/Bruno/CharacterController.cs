@@ -11,13 +11,11 @@ public class CharacterController : MonoBehaviour
 
     [SerializeField] private Rigidbody2D playerRigidbody2D;
     public Vector2 moveDirection;
-    [SerializeField] private float coyoteTime = 0.2f;
     //[SerializeField] private float coyoteTimeCounter;
     //[SerializeField] private float CoyoteTimeCounter => coyoteTimeCounter;
     [SerializeField] private bool hasJumped;
     [SerializeField] private bool isGrounded;
     [SerializeField] private Animator animator;
-    [SerializeField] string soundKey;
 
     private void Start()
     {
@@ -46,7 +44,6 @@ public class CharacterController : MonoBehaviour
         if (currentPlayerMoveDirection.magnitude > 0)
         {
             animator.SetBool("isMoving", true);
-            SoundEffectManager.PlaySoundEffect("belt");
             
         }
         else
