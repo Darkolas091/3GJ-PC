@@ -6,7 +6,7 @@ public class SpecialCollectable : MonoBehaviour
 {
     //[SerializeField] private Image specialCollectableImage;
     [SerializeField] private TMP_Text specialCollectableText;
-    private bool isCollected;
+    public bool isCollected;
 
     private void Awake()
     {

@@ -464,7 +464,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   playerRigidbody2D: {fileID: 460562652453850169}
-  moveDirection: {x: -1, y: 0}
+  moveDirection: {x: 0, y: 0}
   coyoteTime: 0.2
   hasJumped: 0
   isGrounded: 0

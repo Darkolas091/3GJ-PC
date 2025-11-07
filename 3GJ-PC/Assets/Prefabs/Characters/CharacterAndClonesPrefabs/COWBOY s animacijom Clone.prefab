@@ -595,7 +595,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   cloneRigidbody2D: {fileID: 443875282656792244}
-  cloneMoveDirection: {x: -1, y: 0}
+  cloneMoveDirection: {x: -0, y: 0}
   hasJumped: 0
   isGrounded: 0
   animator: {fileID: 7542893379273154582}
