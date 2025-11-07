@@ -3752,6 +3752,7 @@ MonoBehaviour:
   pauseMenuPanel: {fileID: 0}
   playerInWinArea: 0
   cloneInWinArea: 0
+  levelIntroPanelNumberAdjustment: 4
 --- !u!4 &1859911164
 Transform:
   m_ObjectHideFlags: 0
