@@ -27,6 +27,8 @@ public class PlayerInputHandler : MonoBehaviour
         //{
 
         //}
+        if (animator == null)
+            return;
         animator.SetTrigger("isJumping");
         characterController.Jump();
         cloneController.Jump();

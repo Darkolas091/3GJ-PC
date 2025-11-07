@@ -437,6 +437,7 @@ MonoBehaviour:
   hasJumped: 0
   isGrounded: 0
   animator: {fileID: 8861215345535707599}
+  soundKey: animalWalking
 --- !u!95 &8861215345535707599
 Animator:
   serializedVersion: 7
