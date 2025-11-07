@@ -549,7 +549,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: -5.54, y: 0.49, z: 0}
   m_LocalScale: {x: 1.5, y: 1.5, z: 0}
-  m_ConstrainProportionsScale: 1
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6329218929002747355}
   - {fileID: 2293330451252415515}
@@ -595,7 +595,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   cloneRigidbody2D: {fileID: 443875282656792244}
-  cloneMoveDirection: {x: -0, y: 0}
+  cloneMoveDirection: {x: -1, y: 0}
   hasJumped: 0
   isGrounded: 0
   animator: {fileID: 7542893379273154582}

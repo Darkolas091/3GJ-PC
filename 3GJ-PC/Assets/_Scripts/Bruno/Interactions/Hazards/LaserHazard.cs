@@ -11,7 +11,12 @@ public class LaserHazard : MonoBehaviour
     [SerializeField] private float laserLength = 1000f;
     [SerializeField] private float laserThickness = 3f;
     [SerializeField] private float fireInterval = 5f;   
-    [SerializeField] private float laserDuration = 2f;  
+    [SerializeField] private float laserDuration = 2f;
+    [SerializeField] private GameObject particlePrefabStart;
+    [SerializeField] private GameObject particlePrefabEnd;
+
+    private GameObject particleCloneStart;
+    private GameObject particleCloneEnd;
 
     private BoxCollider2D boxCollider;
     private LineRenderer lineRenderer;
@@ -32,6 +37,9 @@ public class LaserHazard : MonoBehaviour
         lineRenderer.startWidth = laserThickness;
         lineRenderer.endWidth = laserThickness;
         lineRenderer.enabled = false;
+
+        particlePrefabStart.SetActive(false);
+        particlePrefabEnd.SetActive(false);
 
         UpdateLinePositions();
     }
@@ -60,6 +68,9 @@ public class LaserHazard : MonoBehaviour
 
         lineRenderer.SetPosition(0, start);
         lineRenderer.SetPosition(1, end);
+
+        particleCloneStart = Instantiate(particlePrefabStart, start, Quaternion.identity);
+        particleCloneEnd = Instantiate(particlePrefabEnd,end, Quaternion.identity);
     }
 
     private IEnumerator FireLaserRoutine()
@@ -70,11 +81,14 @@ public class LaserHazard : MonoBehaviour
 
             boxCollider.enabled = true;
             lineRenderer.enabled = true;
-
+            particleCloneStart.SetActive(true);
+            particleCloneEnd.SetActive(true);
             yield return new WaitForSeconds(laserDuration);
 
             boxCollider.enabled = false;
             lineRenderer.enabled = false;
+            particleCloneStart.SetActive(false);
+            particleCloneEnd.SetActive(false);
         }
     }
 
@@ -82,17 +96,31 @@ public class LaserHazard : MonoBehaviour
     {
         if (!boxCollider.enabled) return; 
 
-        if (other.GetComponent<PlayerInputHandler>() || other.GetComponent<PlayerInputHandler>())
+        if (other.GetComponent<PlayerInputHandler>())
         {
             Destroy(other.gameObject);
+            LevelManager.OnPlayerDeath?.Invoke();
+
         }
     }
 
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
-        Vector3 start = transform.position - new Vector3(laserLength / 2, 0, 0);
-        Vector3 end = transform.position + new Vector3(laserLength / 2, 0, 0);
+        Vector3 start = Vector3.zero;
+        Vector3 end = Vector3.zero;
+
+        if (isVertical)
+        {
+           start = transform.position - new Vector3(0, laserLength / 2, 0);
+           end  = transform.position + new Vector3(0, laserLength / 2, 0);
+        }
+
+        else
+        {
+            start = transform.position - new Vector3(laserLength / 2, 0, 0);
+            end = transform.position + new Vector3(laserLength / 2, 0, 0);
+        }
         Gizmos.DrawLine(start, end);
     }
 }

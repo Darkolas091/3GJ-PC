@@ -15,6 +15,8 @@ public class CloneController : MonoBehaviour
 
     [SerializeField] private Animator animator;
 
+    
+
     private void Start()
     {
         cloneRigidbody2D = GetComponent<Rigidbody2D>();
@@ -43,20 +45,23 @@ public class CloneController : MonoBehaviour
         if (currentPlayerMoveDirection.magnitude > 0)
         {
             animator.SetBool("isMoving", true);
-
+            
         }
         else
         {
             animator.SetBool("isMoving", false);
+            
         }
 
         if (currentPlayerMoveDirection.x > 0)
         {
             transform.localScale = new Vector2(1.5f, 1.5f);
+            
         }
         else if (currentPlayerMoveDirection.x < 0)
         {
             transform.localScale = new Vector2(-1.5f, 1.5f);
+           
         }
         cloneMoveDirection = new Vector2(-currentPlayerMoveDirection.x, currentPlayerMoveDirection.y);
     }
