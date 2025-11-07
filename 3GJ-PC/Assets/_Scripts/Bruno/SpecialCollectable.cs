@@ -4,14 +4,15 @@ using UnityEngine.UI;
 
 public class SpecialCollectable : MonoBehaviour
 {
-    [SerializeField] private Image specialCollectable;
+    //[SerializeField] private Image specialCollectableImage;
     [SerializeField] private TMP_Text specialCollectableText;
     private bool isCollected;
 
     private void Awake()
     {
-        specialCollectable.gameObject.SetActive(false);
-        specialCollectableText.gameObject.SetActive(false);
+        //specialCollectableImage.gameObject.SetActive(true);
+        specialCollectableText.gameObject.SetActive(true);
+        specialCollectableText.text = "0/1";
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -30,8 +31,8 @@ public class SpecialCollectable : MonoBehaviour
         if (isCollected)
         {
             specialCollectableText.gameObject.SetActive(true);
-            specialCollectableText.text = "1";
-            specialCollectable.gameObject.SetActive(true);
+            specialCollectableText.text = "1/1";
+            //specialCollectableImage.gameObject.SetActive(true);
         }
         else
         {
